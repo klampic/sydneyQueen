@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title style="font-family: 'Comic Sans MS',Serif">SS</title>
+    <style>
+        body {
+            font-family: "Comic Sans MS", serif;
+            background: #89cff0;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container for the image and text */
+        .container {
+            display: flex; /* Aligns items in a row */
+            align-items: center; /* Vertically centers the items */
+            justify-content: center; /* Centers the content horizontally */
+            gap: 20px; /* Space between the image and text */
+            padding: 20px;
+            max-width: 800px; /* Max width of the container */
+            margin: 0 auto; /* Centers the container */
+        }
+
+        /* Image styling */
+        img {
+            width: 400px; /* Set image size */
+            height: auto;
+            max-width: 100%; /* Ensures the image doesn't overflow on small screens */
+            margin-bottom: 10px;
+        }
+
+        /* Text block styling */
+        .text {
+            font-size: 1.2em;
+            max-width: 1100px; /* Limits the width of the text for better readability */
+            line-height: 1.8;
+            text-align: center; /* Align text to the left */
+            margin: 0px auto; /* Centers the text */
+            padding: 0 20px;
+        }
+
+        /* For better control of greeting audio */
+        audio {
+            display: none; /* Hide the greeting audio controls */
+        }
+
+        /* Style for the background music player fixed to the right side */
+        .audio-player {
+            position: fixed;
+            right: 10px; /* Distance from the right edge */
+            bottom: 10px; /* Distance from the bottom edge */
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Controls the size of the background audio player */
+        .audio-player audio {
+            width: 250px; /* Width of the player */
+        }
+
+        /* Volume control styling */
+        .volume-control {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+
+    <link rel="icon" href="popCat.gif" type="image/x-con">
+</head>
+
+<body>
+<br>
+<img src="hi.gif" alt="" id="image">
+<br>
+<h1><i>hiii friends! ;></i></h1>
+
+<!-- First greeting audio, plays on page load -->
+<audio id="audio" src="audioCao.mp3" preload="auto"></audio>
+
+<script>
+    window.onload = function() {
+        const greetingAudio = document.getElementById('audio');
+        greetingAudio.volume = 0.2;  // Set initial volume for greeting audio
+        greetingAudio.play();
+
+        // Once greeting audio ends, start background music
+        greetingAudio.onended = function() {
+            const backgroundAudio = document.getElementById('background-audio');
+            backgroundAudio.play();
+        };
+
+       backgroundAudio.onended = function() {
+            backgroundAudio.play();
+       }
+    };
+</script>
+
+<br>
+<h3><u>~~~Introduction~~~</u></h3>
+
+<div class="container">
+    <img src="pirateQ.jpg" alt="muscly">
+    <div class="text">
+        <h1>Sydney Sweeney</h1>
+        <p>"The Queen"</p>
+    </div>
+</div>
+
+<!-- Fixed background music player -->
+<div class="audio-player">
+    <audio id="background-audio" controls autoplay loop>
+        <source src="whiteLotus.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Volume Control Slider -->
+    <div class="volume-control">
+        <label for="volume-slider">Volume:</label>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.01">
+    </div>
+</div>
+
+<script>
+    // Get the background audio and volume slider elements
+    const backgroundAudio = document.getElementById('background-audio');
+    const volumeSlider = document.getElementById('volume-slider');
+
+    // Set initial volume of the background music
+    backgroundAudio.volume = 0.01;
+
+    // Listen for volume slider change to adjust the background audio volume
+    volumeSlider.addEventListener('input', function() {
+        backgroundAudio.volume = volumeSlider.value;
+    });
+</script>
+
+<!-- Text content below the image -->
+<p class="text">In a world where stars often rise and fade quickly, there’s one name that’s impossible to ignore: Sydney Sweeney.<br> But what makes her more than just another public figure? Why does she stand out among the rest?<br> The answer lies in her ability to captivate hearts and minds, not just through her work, but through her authenticity, her presence, and the undeniable energy she radiates.</p>
+
+<br><br>
+<video autoplay muted loop width="500" height="auto">
+    <source src="sminK.mp4" type="video/mp4">
+</video>
+<br><br>
+
+<h2>A Magnetic Presence Like No Other</h2>
+<p class="text">It’s hard to pinpoint just one thing about Sydney Sweeney that makes her stand out. Perhaps it’s her effortless grace—the way she carries herself with such confidence yet seems so approachable. Or maybe it’s the way her smile lights up a room, creating an aura of warmth and genuine charm that pulls everyone in. No matter the setting, Sydney has a way of making people feel seen, heard, and valued, which is an extraordinary gift in itself.
+
+    It’s not just about what she does, but how she makes you feel when she’s around. She has this magnetic energy that commands attention without even trying. Whether in a crowd or on screen, her presence is undeniable, radiating a cool confidence mixed with a level of authenticity that feels both refreshing and inspiring.</p>
+
+<br>
+<video autoplay muted loop width="500" height="auto">
+    <source src="is.mp4" type="video/mp4">
+</video>
+<br><br>
+
+<h2>Beauty That Goes Beyond the Surface</h2>
+<p class="text">
+    Her beauty isn’t just skin deep—it’s in the way she carries herself, the way she speaks, and the way she interacts with the world around her. Every gesture, every look, is full of intention, adding to the magnetic aura she effortlessly projects. But what truly elevates her beauty is the way she exudes strength, intelligence, and kindness in everything she does. She is the perfect combination of elegance and down-to-earth relatability, a rare blend that makes her truly unforgettable.
+</p>
+<br>
+
+<div class="container">
+    <img src="jap.jpg">
+    <img src="sydneyMuscle.png">
+    <img src="cr.jpg">
+</div>
+<br>
+
+</body>
+
+</html>
